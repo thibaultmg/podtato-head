@@ -6,7 +6,7 @@
 name: podtatohead
 version: 0.1.0
 description: "A porter file for the podtato server"
-tag: yogeek/podtatohead-porter
+tag: thibaultmg/podtatohead-porter
 
 # See https://porter.sh/custom-dockerfile/
 dockerfile: Dockerfile.tmpl
@@ -15,7 +15,7 @@ credentials:
 - name: kubeconfig
   path: /root/.kube/config
 #- name: google-service-account
-#  path: /root/google-service-account.json  
+#  path: /root/google-service-account.json
 
 mixins:
  # - gcloud
@@ -33,7 +33,7 @@ images:
   server: # v0.1.2
     description: "The podtato web server"
     imageType: "docker"
-    repository: "yogeek/podtatohead"
+    repository: "thibaultmg/podtatohead"
     digest: "sha256:3fe55b2bc6c9a31a2acdd7ee5c64cb076a267c11443d9bb12c1467272bf9af07"
 
 install:
@@ -73,7 +73,7 @@ uninstall:
         - relocate
         - "{{bundle.images.server.repository}}@{{bundle.images.server.digest}}"
   - kubernetes:
-      description: "Uninstall the podtato server"  
+      description: "Uninstall the podtato server"
       manifests:
         - ./manifests
       wait: true

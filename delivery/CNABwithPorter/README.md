@@ -23,14 +23,14 @@ All this configuration is declared in a Bundle file : `./porter.yaml`
 1. Publish the bundle to a registry. You can change where the bundle is published with the `--tag` flag.
 
     ```
-    porter publish --tag yogeek/podtatohead-porter:v0.1.0
+    porter publish --tag thibaultmg/podtatohead-porter:v0.1.0
     ```
 
 1. Archive the bundle to create a tgz file containing the bundle _and_ any images referenced by
     the bundle from the `images` section of the porter.yaml.
 
     ```
-    porter archive podtatohead.tgz --tag yogeek/podtatohead-porter:v0.1.0
+    porter archive podtatohead.tgz --tag thibaultmg/podtatohead-porter:v0.1.0
     ```
 
 1. Move the tgz file across the airgap, using removable media such as a USB stick or CD.
@@ -47,7 +47,7 @@ All this configuration is declared in a Bundle file : `./porter.yaml`
     This ensures that when someone installs a bundle, if they have access to the
     bundle repository, they are guaranteed to have access to the installer image
     and the referenced images.
-    
+
     Learn more about what to [expect the images to look like in the destination
     repository](https://porter.sh/distribute-bundles/#image-references-after-publishing).
     There is an [open issue](https://github.com/cnabio/cnab-to-oci/issues/104)

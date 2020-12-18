@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 PROJECT="pod-tato-head"
-IMAGE="yogeek/podtatohead"
+IMAGE="thibaultmg/podtatohead"
 VERSION="$2"
 
 case "$1" in
   "create-project")
     echo "Creating keptn project $PROJECT"
-    echo keptn create project "${PROJECT}" --shipyard=./shipyard.yaml   
+    echo keptn create project "${PROJECT}" --shipyard=./shipyard.yaml
     keptn create project "${PROJECT}" --shipyard=./shipyard.yaml
     ;;
   "onboard-service")
@@ -22,7 +22,7 @@ case "$1" in
     echo "Deploying keptn service podtatohead in project ${PROJECT}"
     echo keptn send event new-artifact --project="${PROJECT}" --service=podtatohead --image="${IMAGE}" --tag=v"${VERSION}"
     keptn send event new-artifact --project="${PROJECT}" --service=podtatohead --image="${IMAGE}" --tag=v"${VERSION}"
-    ;;    
+    ;;
   "upgrade-service")
     echo "Upgrading keptn service podtatohead in project ${PROJECT}"
     keptn send event new-artifact --project="${PROJECT}" --service=podtatohead --image="${IMAGE}" --tag=v0.1.2

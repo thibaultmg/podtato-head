@@ -62,7 +62,7 @@ porter publish --tag yourname/thebundle:v0.1.0
 
 ## Installing the bundle
 
-When you are testing out the bundle, you can install it directly from source by 
+When you are testing out the bundle, you can install it directly from source by
 running install command in the same directory as the porter.yaml file.
 
 ```
@@ -72,7 +72,7 @@ porter install
 Use the `--tag` to install a published bundle:
 
 ```
-porter install podtatohead-demo --tag yogeek/podtatohead-porter:v0.1.0
+porter install podtatohead-demo --tag thibaultmg/podtatohead-porter:v0.1.0
 ```
 
 ## Uninstalling the bundle

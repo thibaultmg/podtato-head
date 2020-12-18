@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPOSITORY="yogeek"
+REPOSITORY="thibaultmg"
 
 TAG="0.1.0"
 

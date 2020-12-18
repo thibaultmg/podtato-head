@@ -42,7 +42,7 @@ flux check
 
 ```
 # Replace by your username to point to YOUR fork of the "podtatohead" project
-export GITHUB_USER="yogeek" 
+export GITHUB_USER="thibaultmg"
 
 flux create source git podtato \
   --url="https://github.com/${GITHUB_USER}/podtato-head" \
@@ -101,7 +101,7 @@ From now, any changes made to the Kubernetes manifests in the main branch will b
 # Update the image version (reminder: existing tags are 0.1.0, 0.1.1, 0.1.2)
 
 # Commit and push your modification
-git add -A && git commit -m "update app" && git push 
+git add -A && git commit -m "update app" && git push
 ```
 
 Observe Flux synching your modifications directly into the cluster:
@@ -179,8 +179,8 @@ helm ls
 
 Check the nginx service :
 ```
-SVC_IP=$(kubectl -n default get service nginx -o jsonpath='{.status.loadBalancer.ingress[0].ip}')  
-SVC_PORT=$(kubectl -n default get service nginx -o jsonpath='{.spec.ports[0].port}')  
+SVC_IP=$(kubectl -n default get service nginx -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+SVC_PORT=$(kubectl -n default get service nginx -o jsonpath='{.spec.ports[0].port}')
 xdg-open http://${SVC_IP}:${SVC_PORT}
 ```
 
@@ -285,7 +285,7 @@ From here, you can commit your applications flux manifests in a `apps` directory
 mkdir -p manifests/apps/podtato
 
 flux create source git podtato \
-  --url="https://github.com/yogeek/podtato-head" \
+  --url="https://github.com/thibaultmg/podtato-head" \
   --branch="main" \
   --interval=1m \
   --export | tee manifests/apps/podtato/podtato-app.yaml
